@@ -8,8 +8,11 @@ CFLAGS = -std=c99 -Wall -g
 # LDFLAGS = -lGL -lglut -lpng -lz -lm
 
 .PHONY: run
-run: solution nros2bytes.dat
+run: all
 	./solution
+
+.PHONY: all
+all: solution nros2bytes.dat
 
 solution: $(obj)
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)

@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
   stat(DATAFILE, &stats_buf);
 
   const int n = stats_buf.st_size / 2;
-  int file_buf[n];
+  uint16_t file_buf[n];
 
   FILE *file = fopen(DATAFILE, "r");
   fread(file_buf, 2, n, file);
@@ -22,10 +22,10 @@ int main(int argc, char **argv) {
 
   // write with duplication
   file = fopen(DATAFILE, "w");
-  int *ptr = file_buf;
-  int *end = file_buf + n;
+  uint16_t *ptr = file_buf;
+  uint16_t *end = file_buf + n;
   for (; ptr != end; ptr++) {
-    int x = ntohs(*ptr);
+    uint16_t x = ntohs(*ptr);
     fwrite(ptr, 2, 1, file);
     if (!(x % 3))
       fwrite(ptr, 2, 1, file);

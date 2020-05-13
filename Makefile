@@ -7,12 +7,12 @@ CFLAGS = -std=c99 -Wall -g
 # Use LDFLAGS for options that include libraries
 # LDFLAGS = -lGL -lglut -lpng -lz -lm
 
+.PHONY: all
+all: solution nros2bytes.dat
+
 .PHONY: run
 run: all
 	./solution
-
-.PHONY: all
-all: solution nros2bytes.dat
 
 solution: $(obj)
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)

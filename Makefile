@@ -2,7 +2,7 @@ src = $(wildcard src/*.c)
 
 obj = $(src:.c=.o)
 
-CFLAGS = -std=c99 -Wall -Wextra -g
+CFLAGS = -std=c99 -Wall -g
 
 # Use LDFLAGS for options that include libraries
 # LDFLAGS = -lGL -lglut -lpng -lz -lm

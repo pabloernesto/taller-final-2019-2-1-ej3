@@ -1,3 +1,7 @@
+/* ftruncate ftell */
+#define _POSIX_C_SOURCE 200112L
+
+/* fileno */
 #include <stdio.h>      // file wrangling
 #include <arpa/inet.h>  // hton family
 

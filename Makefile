@@ -17,8 +17,8 @@ run: all
 solution: $(obj)
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
-nros2bytes.dat: dataset.sh
-	./dataset.sh
+nros2bytes.dat: dataset.py
+	python3 dataset.py
 
 .PHONY: clean
 clean:
